@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD"
+    tools:context=".presentation.main.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        android:clipToPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_pink"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCalendar"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="11dp"
+                android:src="@drawable/calendar"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/ivCalendar"
+                android:fontFamily="@font/inter_semibold"
+                android:includeFontPadding="true"
+                android:textColor="#D9FFFFFF"
+                android:textSize="14sp"
+                android:text="2024-07" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/tvDate"
+                android:fontFamily="@font/inter_semibold"
+                android:includeFontPadding="true"
+                android:textColor="#D9FAF5F5"
+                android:textSize="14sp"
+                android:text="Balance" />
+
+            <ImageView
+                android:id="@+id/btnMore"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_more"
+                android:textAlignment="textEnd"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvRemains"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDate"
+                android:fontFamily="@font/inter_bold"
+                android:includeFontPadding="true"
+                android:layout_marginStart="6dp"
+                android:paddingStart="6dp"
+                android:paddingTop="7dp"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:text="-500,000" />
+
+            <TextView
+                android:id="@+id/tvExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRemains"
+                android:fontFamily="@font/inter_regular"
+                android:includeFontPadding="true"
+                android:layout_marginStart="6dp"
+                android:paddingStart="6dp"
+                android:paddingTop="9dp"
+                android:text="Expense:"
+                android:textColor="#D9FFFFFF"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvExpenseValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRemains"
+                android:layout_toRightOf="@+id/tvExpense"
+                android:fontFamily="@font/inter_semibold"
+                android:includeFontPadding="true"
+                android:paddingStart="6dp"
+                android:paddingTop="7dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText"
+                android:text="-500,000" />
+
+            <TextView
+                android:id="@+id/tvIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvExpense"
+                android:fontFamily="@font/inter_regular"
+                android:includeFontPadding="true"
+                android:layout_marginStart="6dp"
+                android:paddingStart="6dp"
+                android:paddingTop="9dp"
+                android:text="Income:"
+                android:textColor="#D9FFFFFF"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvIncomeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvExpenseValue"
+                android:layout_toRightOf="@+id/tvIncome"
+                android:fontFamily="@font/inter_semibold"
+                android:includeFontPadding="true"
+                android:paddingStart="6dp"
+                android:paddingTop="7dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText"
+                android:text="0" />
+
+            <View
+                android:id="@+id/containerProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/tvIncome"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/bg_containerprogressbar"
+                android:elevation="15dp" />
+
+            <TextView
+                android:id="@+id/tvBudgets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIncome"
+                android:fontFamily="@font/inter_bold"
+                android:elevation="15dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginStart="10dp"
+                android:includeFontPadding="true"
+                android:text="Budget:"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:id="@+id/tvBudgetsValues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIncomeValue"
+                android:layout_toRightOf="@+id/tvBudgets"
+                android:fontFamily="@font/inter_bold"
+                android:elevation="15dp"
+                android:layout_marginTop="31dp"
+                android:includeFontPadding="true"
+                android:paddingStart="6dp"
+                android:paddingTop="7dp"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText"
+                android:text="800,000" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBudget"
+                android:elevation="15dp"
+                android:layout_below="@id/tvBudgets"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:progress="60"
+                app:trackThickness="6dp"
+                app:trackCornerRadius="99dp"
+                app:trackColor="@color/track_color"
+                app:indicatorColor="@color/bg_pink"/>
+
+            <TextView
+                android:id="@+id/tvRemainingBudgetValues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvBudgetsValues"
+                android:fontFamily="@font/inter_bold"
+                android:elevation="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:includeFontPadding="true"
+                android:paddingStart="6dp"
+                android:paddingTop="7dp"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText"
+                android:text="800,000" />
+            
+            <TextView
+                android:id="@+id/tvRemainingBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progressBudget"
+                android:fontFamily="@font/inter_bold"
+                android:elevation="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_toStartOf="@+id/tvRemainingBudgetValues"
+                android:includeFontPadding="true"
+                android:text="Remaining Budget:"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/containerProgressBar"
+                android:background="#D9FFFFFF"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="1"
+                tools:itemCount="6"
+                tools:listitem="@layout/transaction"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ImageView
+        android:id="@+id/btnAdd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_btnadd"
+        android:contentDescription="@null"
+        android:elevation="15dp"
+        android:padding="14dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btnCategory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:padding="14dp"
+            android:src="@drawable/ic_category" />
+
+        <ImageView
+            android:id="@+id/btnAnalytics"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@null"
+            android:padding="14dp"
+            android:src="@drawable/ic_analytics" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
